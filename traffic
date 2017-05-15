@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+ var timer = prompt("Enter the desire interval in milisecond","0");
+ var time = parseInt(timer);
+ console.log(time);
+ if(timer !=0 ){
+setInterval(TrafficLight,time);
+}
+
+var count = 1;
+function TrafficLight(){
+ count=count+1;
+ var colors = ["white", "red", "yellow", "green"];
+ var div = document.querySelectorAll("one");
+ var div1 = document.querySelectorAll("two");
+ var div2 = document.querySelectorAll("three");
+ console.log(count);
+ 
+ if(count == colors.length){
+ count=0;
+   
+   div[0].style.background = colors[1];
+   div[1].style.background = colors[1];
+   div[2].style.background = colors[1];
+   div1[0].style.background = colors[0];
+   div1[1].style.background = colors[0];
+   div1[2].style.background = colors[0];
+   div2[0].style.background = colors[0];
+   div2[1].style.background = colors[0];
+   div2[2].style.background = colors[0];
+   
+ }
+  else if(count == 1){
+    
+	div1[0].style.background = colors[2];
+	div1[1].style.background = colors[2];
+	div1[2].style.background = colors[2];
+	div2[0].style.background = colors[0];
+	div2[1].style.background = colors[0];
+	div2[2].style.background = colors[0];
+	div[0].style.background = colors[0];
+	div[1].style.background = colors[0];
+	div[2].style.background = colors[0];
+  
+  }
+  
+  else {
+    
+	div2[0].style.background = colors[3];
+	div2[1].style.background = colors[3];
+	div2[2].style.background = colors[3];
+	div1[0].style.background = colors[0];
+	div1[1].style.background = colors[0];
+	div1[2].style.background = colors[0];
+	div[0].style.background = colors[0];
+	div[1].style.background = colors[0];
+	div[2].style.background = colors[0];
+  
+  }
+
+}
+
+</script>
+
+<style>
+
+#left,#center,#right{
+   border: 2px solid black;
+   width: 170px;
+   float: left;
+   background-image: linear-gradient(transparent 2%, #111 2%, transparent 3%, #111 30%);
+   background: #222;
+   border-radius: 20px;
+   position: relative;
+   border: solid 5px #333;
+ 
+}
+
+#left:after,#center:after,#right:after{
+   background: #222;
+   background-image: linear-gradient(-0deg, #777 10%, #CCC 30%, #000);
+   content: "";
+   width: 50px;
+   height: 500px;
+   margin-left: -20px;
+   position: absolute;
+   top: 150px;
+   z-index: -1;
+ 
+}
+
+#conter{
+  border: 2px solid black;
+  width: 170px;
+  margin-left: 400px;
+  display: inline block;
+}
+
+#right{
+
+   border: 2px solid black;
+   width: 170px;
+   float: right;
+}
+
+#container{
+
+   width: 100%;
+   text-align: center;
+
+}
+
+#one{
+
+	width: 100px;
+	height: 100px;
+	margin-left: 35pz;
+	border-radius: 50%;
+	margin-top: 10px;
+
+}
+
+#one{
+
+	width: 100px;
+	height: 100px;
+	margin-left: 35pz;
+	border-radius: 50%;
+	margin-top: 50px;
+
+}
+
+#one{
+
+	width: 100px;
+	height: 100px;
+	margin-left: 35pz;
+	border-radius: 50%;
+	margin-top: 50px;
+
+}
+
+</head>
+<body style="background-color:gray;text-align:center">
+<h1 style='color:orange'>Traffic Lights</h1>
+<div id="container">
+<div id="left">
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+
+</div>
+<div id="center">
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+</div>
+
+<div id="right">
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+</div>
+</div>
+
+</body>
+</html>
